@@ -1,3 +1,1 @@
-## Learning react is fun
-
-Learning from guru akshay saini
+Namaste React by Guru Akshay Saini
