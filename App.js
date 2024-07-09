@@ -1009,6 +1009,8 @@ const resList = [
 
 const Restaurantcard = (props) => {
   const { resData } = props;
+  const { name, cuisines, avgRating, costForTwo } = resData?.info;
+  const { deliveryTime } = resData?.info?.sla;
   return (
     <div className="res-card" style={styleCard}>
       <img
@@ -1019,11 +1021,11 @@ const Restaurantcard = (props) => {
           resData.info.cloudinaryImageId
         }
       />
-      <h3>{resData.info.name}</h3>
-      <h4>{resData.info.cuisines.join(",")}</h4>
-      <h4>{resData.info.avgRating} stars</h4>
-      <h4>{resData.info.costForTwo}</h4>
-      <h4>{resData.info.sla.deliveryTime} minutes</h4>
+      <h3>{name}</h3>
+      <h4>{cuisines.join(",")}</h4>
+      <h4>{avgRating} stars</h4>
+      <h4>{costForTwo}</h4>
+      <h4>{deliveryTime} minutes</h4>
     </div>
   );
 };
@@ -1033,7 +1035,15 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
+        <Restaurantcard resData={resList[0]} />
+        <Restaurantcard resData={resList[1]} />
+        <Restaurantcard resData={resList[2]} />
+        <Restaurantcard resData={resList[3]} />
         <Restaurantcard resData={resList[4]} />
+        <Restaurantcard resData={resList[5]} />
+        <Restaurantcard resData={resList[6]} />
+        <Restaurantcard resData={resList[7]} />
+        <Restaurantcard resData={resList[8]} />
       </div>
     </div>
   );
