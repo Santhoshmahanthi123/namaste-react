@@ -1,131 +1,78 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Button from "@mui/material/Button";
-import { styled, alpha } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import InputBase from "@mui/material/InputBase";
-import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
-const jsxHeading = <h1 className="head">Namaste React...</h1>;
-import PersonIcon from "@mui/icons-material/Person";
 
-// functional component
-const Title = () => <h1 className="head"> Learning react is fun!!!</h1>;
-
-// element
-
-let elem = (
-  <span>
-    React element! <br></br>
-  </span>
-);
-
-const HeadingComponent2 = () => {
-  return <h1 className="body">React Functional Component!</h1>;
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img
+          className="logo"
+          src="https://png.pngtree.com/png-vector/20220705/ourmid/pngtree-food-logo-png-image_5687686.png"
+          alt="logo"
+        ></img>
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+const styleCard = {
+  backgroundColor: "skyblue",
+};
+const Restaurantcard = () => {
+  return (
+    <div className="res-card" style={styleCard}>
+      <img
+        alt="res-img"
+        className="res-logo"
+        src="https://static.vecteezy.com/system/resources/thumbnails/025/028/422/small/a-big-breakfast-food-png.png"
+      />
+      <h3>Santhosh Dhaba</h3>
+      <h4>Biryani, North Inidan, Asian</h4>
+      <h4>4.5 stars</h4>
+      <h4>38 min</h4>
+    </div>
+  );
 };
 
-const HeadingComponent = () => (
-  <div id="container">
-    <Title />
-    <h1 className="head">React Functional Component!</h1>
-  </div>
-);
-
-export function ButtonUsage() {
-  return <Button variant="contained">Hello world</Button>;
-}
-
-const title = (
-  <h1 className="head">
-    {elem}
-    This is title
-    <HeadingComponent />
-  </h1>
-);
-
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(1),
-    width: "auto",
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  width: "100%",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch",
-      },
-    },
-  },
-}));
-
-export default function SearchAppBar() {
+const Body = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-          >
-            <PersonIcon />
-          </Typography>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="res-container">
+        <Restaurantcard />
+        <Restaurantcard />
+        <Restaurantcard />
+        <Restaurantcard />
+        <Restaurantcard />
+        <Restaurantcard />
+        <Restaurantcard />
+        <Restaurantcard />
+        <Restaurantcard />
+        <Restaurantcard />
+        <Restaurantcard />
+        <Restaurantcard />
+        <Restaurantcard />
+        <Restaurantcard />
+      </div>
+    </div>
   );
-}
+};
 
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  );
+};
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<SearchAppBar />);
+root.render(<AppLayout />);
