@@ -5,6 +5,9 @@ const jsxHeading = <h1 className="head">Namaste React...</h1>;
 // functional component
 const Title = () => <h1 className="head"> Learning react is fun!!!</h1>;
 
+// element
+
+const title = <h1>This is title</h1>;
 const HeadingComponent2 = () => {
   return <h1 className="body">React Functional Component!</h1>;
 };
@@ -12,6 +15,7 @@ const HeadingComponent2 = () => {
 const HeadingComponent = () => (
   <div id="container">
     <Title />
+    <h2>{title}</h2>
     <h1 className="head">React Functional Component!</h1>
   </div>
 );
