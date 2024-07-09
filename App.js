@@ -7,7 +7,12 @@ const Title = () => <h1 className="head"> Learning react is fun!!!</h1>;
 
 // element
 
-const title = <h1>This is title</h1>;
+let elem = (
+  <span>
+    React element! <br></br>
+  </span>
+);
+
 const HeadingComponent2 = () => {
   return <h1 className="body">React Functional Component!</h1>;
 };
@@ -15,9 +20,16 @@ const HeadingComponent2 = () => {
 const HeadingComponent = () => (
   <div id="container">
     <Title />
-    <h2>{title}</h2>
     <h1 className="head">React Functional Component!</h1>
   </div>
 );
+
+const title = (
+  <h1 className="head">
+    {elem}
+    This is title
+    <HeadingComponent />
+  </h1>
+);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComponent />);
+root.render(title);
