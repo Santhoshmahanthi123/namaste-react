@@ -586,105 +586,6 @@ const resList = [
   },
   {
     info: {
-      id: "612602",
-      name: "Kwality Walls Frozen Dessert and Ice Cream Shop",
-      cloudinaryImageId:
-        "RX_THUMBNAIL/IMAGES/VENDOR/2024/6/13/b3739937-c8ca-40ea-96cd-03b049b4600e_612602.JPG",
-      locality: "Circle No 13",
-      areaName: "Charminar",
-      costForTwo: "₹200 for two",
-      cuisines: ["Desserts", "Ice Cream", "Ice Cream Cakes"],
-      avgRating: 4.6,
-      veg: true,
-      parentId: "582",
-      avgRatingString: "4.6",
-      totalRatingsString: "1K+",
-      sla: {
-        deliveryTime: 26,
-        lastMileTravel: 2.4,
-        serviceability: "SERVICEABLE",
-        slaString: "25-30 mins",
-        lastMileTravelString: "2.4 km",
-        iconType: "ICON_TYPE_EMPTY",
-      },
-      availability: {
-        nextCloseTime: "2024-07-10 05:00:00",
-        opened: true,
-      },
-      badges: {
-        imageBadges: [
-          {
-            imageId: "v1695133679/badges/Pure_Veg111.png",
-            description: "pureveg",
-          },
-        ],
-        textExtendedBadges: [
-          {
-            iconId: "Ratnesh_Badges/test2.png",
-            shortDescription: "Perfect ice cream delivery",
-            fontColor: "#7E808C",
-          },
-        ],
-      },
-      isOpen: true,
-      type: "F",
-      badgesV2: {
-        entityBadges: {
-          imageBased: {
-            badgeObject: [
-              {
-                attributes: {
-                  description: "pureveg",
-                  imageId: "v1695133679/badges/Pure_Veg111.png",
-                },
-              },
-            ],
-          },
-          textBased: {},
-          textExtendedBadges: {
-            badgeObject: [
-              {
-                attributes: {
-                  description: "",
-                  fontColor: "#7E808C",
-                  iconId: "Ratnesh_Badges/test2.png",
-                  shortDescription: "Perfect ice cream delivery",
-                },
-              },
-            ],
-          },
-        },
-      },
-      aggregatedDiscountInfoV3: {
-        header: "50% OFF",
-        subHeader: "UPTO ₹100",
-      },
-      differentiatedUi: {
-        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-        differentiatedUiMediaDetails: {
-          mediaType: "ADS_MEDIA_ENUM_IMAGE",
-          lottie: {},
-          video: {},
-        },
-      },
-      reviewsSummary: {},
-      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-      restaurantOfferPresentationInfo: {},
-      externalRatings: {
-        aggregatedRating: {
-          rating: "--",
-        },
-      },
-      ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
-    },
-    analytics: {},
-    cta: {
-      link: "https://www.swiggy.com/restaurants/kwality-walls-frozen-dessert-and-ice-cream-shop-circle-no-13-charminar-hyderabad-612602",
-      type: "WEBLINK",
-    },
-  },
-  {
-    info: {
       id: "168402",
       name: "NIC Ice Creams",
       cloudinaryImageId: "18d8b8fb6bac8063a6fa886e20148110",
@@ -1036,7 +937,7 @@ const Body = () => {
       <div className="search">Search</div>
       <div className="res-container">
         {resList.map((restaurant) => (
-          <Restaurantcard resData={restaurant} />
+          <Restaurantcard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
     </div>
